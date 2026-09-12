@@ -1,0 +1,92 @@
+.services {
+  position: relative;
+  border-top: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+/* The glass cards sample whatever sits behind them, so this section needs
+   real visual texture behind the cards for the refraction to read clearly
+   — a flat single-tone background would make the effect nearly invisible. */
+.services-atmosphere {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(50% 60% at 12% 15%, rgba(217, 119, 87, 0.16) 0%, transparent 65%),
+    radial-gradient(45% 55% at 88% 80%, rgba(124, 147, 168, 0.14) 0%, transparent 65%),
+    repeating-linear-gradient(120deg, rgba(243, 238, 228, 0.03) 0px, rgba(243, 238, 228, 0.03) 1px, transparent 1px, transparent 64px);
+  pointer-events: none;
+}
+
+.services-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.services-grid > div {
+  height: 100%;
+}
+
+.service-card {
+  height: 100%;
+}
+
+.service-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-5) var(--space-4);
+}
+
+.service-card-content h3 {
+  font-size: var(--step-1);
+  margin-bottom: var(--space-2);
+}
+
+.service-description {
+  color: var(--stone-300);
+  font-size: var(--step--1);
+  margin-bottom: var(--space-4);
+}
+
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.service-features li {
+  position: relative;
+  padding-left: var(--space-3);
+  font-size: var(--step--1);
+  color: var(--stone-300);
+}
+
+.service-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--clay-400);
+}
+
+.service-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--clay-300);
+  font-size: var(--step--1);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--clay-500);
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.service-cta:hover {
+  color: var(--ivory);
+  border-color: var(--ivory);
+}

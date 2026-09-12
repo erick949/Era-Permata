@@ -1,0 +1,61 @@
+.hero3d {
+  position: relative;
+  width: min(72vw, 560px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+}
+
+/* Optional larger variant to let the image bleed behind the headline text.
+   Add className="hero3d hero3d--bleed" from the parent if you want this —
+   it needs z-index/overflow adjustments in the layout that holds Hero3D,
+   which I don't have yet (send that file if you want it wired in). */
+.hero3d--bleed {
+  width: min(46vw, 640px);
+  aspect-ratio: auto;
+  height: 130%;
+  position: absolute;
+  top: -14%;
+  left: 0;
+}
+
+.hero3d-video {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* Rectangular fade: soft at the top, soft on both sides, SHARP at the
+     bottom (no fade there). Two linear gradients intersected instead of
+     the old radial-gradient circle mask. */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 18%, black 100%),
+    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-composite: source-in, source-in;
+
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 18%, black 100%),
+    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-composite: intersect;
+}
+
+@media (max-width: 720px) {
+  .hero3d {
+    width: min(80vw, 350px);
+  }
+
+  .hero3d-video {
+    /* Slightly tighter fade on small screens so more of the photo shows */
+    -webkit-mask-image:
+      linear-gradient(to bottom, transparent 0%, black 12%, black 100%),
+      linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image:
+      linear-gradient(to bottom, transparent 0%, black 12%, black 100%),
+      linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+}

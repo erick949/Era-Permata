@@ -1,0 +1,66 @@
+
+
+:root {
+  /* ---- Ink scale (warm near-black, not flat #111) ---- */
+  --ink-950: #12100d;
+  --ink-900: #17140f;
+  --ink-800: #211c17;
+  --ink-700: #2c2620;
+  --ink-600: #3b332a;
+
+  /* ---- Warm neutrals for text/hairlines on dark ---- */
+  --ivory: #f3eee4;
+  --stone-300: #cdc3b4;
+  --stone-500: #a89c8a;
+  --taupe-600: #8a7d6c;
+  --hairline: rgba(205, 195, 180, 0.16);
+
+  /* ---- Brand accent (mandated) ---- */
+  --clay-500: #d97757;
+  --clay-400: #e2916f;
+  --clay-300: #eaad92;
+  --clay-700: #b25a3d;
+  --clay-glow: rgba(217, 119, 87, 0.35);
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', 'Iowan Old Style', ui-serif, Georgia, serif;
+  --font-body: 'Archivo', 'Inter', system-ui, -apple-system, sans-serif;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --step-2: clamp(1.55rem, 1.35rem + 0.9vw, 2rem);
+  --step-3: clamp(2.1rem, 1.7rem + 1.8vw, 3rem);
+  --step-4: clamp(2.8rem, 2.1rem + 3.2vw, 4.5rem);
+  --step-5: clamp(3.4rem, 2.4rem + 4.6vw, 6rem);
+
+  /* ---- Spacing scale ---- */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 7rem;
+
+  /* ---- Layout ---- */
+  --content-max: 1240px;
+  --content-pad: clamp(1.25rem, 4vw, 3.5rem);
+  --radius-glass: 28px;
+  --radius-soft: 6px;
+
+  /* ---- Motion ---- */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med: 420ms;
+  --dur-slow: 900ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-med: 1ms;
+    --dur-slow: 1ms;
+  }
+}

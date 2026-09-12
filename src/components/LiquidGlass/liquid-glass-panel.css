@@ -1,0 +1,19 @@
+
+.lg-host {
+  position: relative;
+  display: block;
+}
+
+.lg-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .lg-host:has(canvas[data-gl-failed='true']) {
+    backdrop-filter: blur(16px);
+    background: rgba(20, 18, 17, 0.35);
+  }
+}
