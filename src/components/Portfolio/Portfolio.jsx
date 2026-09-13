@@ -62,9 +62,15 @@ function PortfolioTile({ item }) {
   const Icon = categoryIcons[item.category] || SparkIcon
   return (
     <figure className={`portfolio-tile portfolio-tile-${item.size}`}>
-      <div className="portfolio-tile-placeholder">
-        <Icon className="portfolio-tile-icon" />
-      </div>
+      {item.image ? (
+        <div className="portfolio-tile-media">
+          <img src={item.image} alt={item.title} loading="lazy" />
+        </div>
+      ) : (
+        <div className="portfolio-tile-placeholder">
+          <Icon className="portfolio-tile-icon" />
+        </div>
+      )}
       <figcaption>
         <span className="portfolio-tile-category">{item.category}</span>
         <span className="portfolio-tile-title">{item.title}</span>
